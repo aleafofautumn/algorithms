@@ -1,4 +1,4 @@
-package algorithms;
+package com.gengsc.algorithms;
 
 public class Gcd {
 

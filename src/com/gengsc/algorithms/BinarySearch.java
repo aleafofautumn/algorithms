@@ -1,11 +1,12 @@
 /**
  * 
  */
-package algorithms;
+package com.gengsc.algorithms;
 
 import java.util.Arrays;
 
-import edu.princeton.cs.algs4.In;
+import com.gengsc.util.FileUtil;
+
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -24,14 +25,14 @@ public class BinarySearch {
 	 * @param a
 	 * @return
 	 */
-	public static int rank(int key, int[] a) {
+	public static int rank(int key, Integer[] a) {
 		int lo = 0;
 		int hi = a.length - 1;
 		while (lo <= hi) {
 			int mid = lo + (hi - lo) / 2;
-			if (key < mid) {
+			if (key < a[mid]) {
 				hi = mid - 1;
-			} else if (key > mid) {
+			} else if (key > a[mid]) {
 				lo = mid + 1;
 			} else {
 				return mid;
@@ -42,14 +43,13 @@ public class BinarySearch {
 	}
 	
 	public static void main(String[] args) {
-		int[] whitelist = In.readInts();
+		Integer[] whitelist = FileUtil.readList("largeW.txt");
 		Arrays.sort(whitelist);
-		while (!StdIn.isEmpty()) {
-			int key = StdIn.readInt();
+		Integer[] accountList = FileUtil.readList("largeT.txt");
+		for (Integer key : accountList) {
 			if (rank(key, whitelist) < 0) {
-				StdOut.println(key);
+				System.out.println(key);
 			}
-			
 		}
 	}
 }
