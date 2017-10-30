@@ -46,9 +46,8 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
 
     @Override
     public Iterator<Item> iterator() {
-        return null;
+        return new ReverseArrayIterator();
     }
-
 
     private class ReverseArrayIterator implements Iterator<Item>{
 
