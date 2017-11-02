@@ -21,6 +21,10 @@ public class FixedCapacityStackOfString<Item> {
         return N;
     }
 
+    public boolean isFull() {
+        return N == a.length;
+    }
+
     public Item pop(Item s) {
         Item item = a[--N];
         a[N] = null;

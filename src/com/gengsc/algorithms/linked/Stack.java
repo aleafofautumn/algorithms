@@ -33,6 +33,10 @@ public class Stack<Item> implements Iterable<Item>{
         N++;
     }
 
+    public Item peek() {
+        return first.item;
+    }
+
     public Item pop() {
         Item item = first.item;
         first = first.next;
@@ -62,4 +66,12 @@ public class Stack<Item> implements Iterable<Item>{
         }
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Item item : this) {
+            stringBuilder.append(item+" ");
+        }
+        return stringBuilder.toString();
+    }
 }

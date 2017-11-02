@@ -1,5 +1,6 @@
 package com.gengsc.algorithms.linked;
 
+import com.gengsc.algorithms.stack.ResizingArrayStack;
 import edu.princeton.cs.algs4.StdIn;
 
 /**
@@ -9,7 +10,7 @@ import edu.princeton.cs.algs4.StdIn;
  */
 public class StackTest {
     public static void main(String[] args) {
-        Stack<String> stack = new Stack<>();
+        ResizingArrayStack<String> stack = new ResizingArrayStack();
         while (!StdIn.isEmpty()) {
             String item = StdIn.readString();
             if (!item.equals("-")) {

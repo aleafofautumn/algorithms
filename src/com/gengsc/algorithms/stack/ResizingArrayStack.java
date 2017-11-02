@@ -22,7 +22,7 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
 
     public void resize(int max) {
         Item[] items = (Item[]) new Object[max];
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < N; i++) {
             items[i] = a[i];
         }
         a = items;
